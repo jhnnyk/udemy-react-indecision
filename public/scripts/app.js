@@ -2,8 +2,6 @@
 
 console.log('App.js is running');
 
-var appRoot = document.getElementById('app');
-
 var app = {
   title: 'Indecision App',
   subtitle: 'Helping people make decisions one at a time',
@@ -27,6 +25,14 @@ var removeAllOptions = function removeAllOptions() {
   renderApp();
 };
 
+var makeDecision = function makeDecision() {
+  var randomNum = Math.floor(Math.random() * app.options.length);
+  var option = app.options[randomNum];
+  alert(option);
+};
+
+var appRoot = document.getElementById('app');
+
 var renderApp = function renderApp() {
   var template = React.createElement(
     'div',
@@ -47,9 +53,9 @@ var renderApp = function renderApp() {
       app.options && app.options.length > 0 ? 'Here are your options' : 'No options'
     ),
     React.createElement(
-      'p',
-      null,
-      app.options.length
+      'button',
+      { disabled: app.options.length === 0, onClick: makeDecision },
+      'What should I do?'
     ),
     React.createElement(
       'button',
@@ -59,16 +65,13 @@ var renderApp = function renderApp() {
     React.createElement(
       'ol',
       null,
-      React.createElement(
-        'li',
-        null,
-        'Item one'
-      ),
-      React.createElement(
-        'li',
-        null,
-        'Item two'
-      )
+      app.options.map(function (opt) {
+        return React.createElement(
+          'li',
+          { key: opt },
+          opt
+        );
+      })
     ),
     React.createElement(
       'form',
