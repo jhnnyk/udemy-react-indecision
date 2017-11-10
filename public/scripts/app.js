@@ -28,10 +28,14 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: "handleDeleteOptions",
     value: function handleDeleteOptions() {
+      // this.setState(() => {
+      //   return {
+      //     options: []
+      //   };
+      // });
+      // replace the above with the ONE line below
       this.setState(function () {
-        return {
-          options: []
-        };
+        return { options: [] };
       });
     }
   }, {
@@ -51,9 +55,7 @@ var IndecisionApp = function (_React$Component) {
       }
 
       this.setState(function (prevState) {
-        return {
-          options: prevState.options.concat(option)
-        };
+        return { options: prevState.options.concat(option) };
       });
     }
   }, {
@@ -183,11 +185,14 @@ var AddOption = function (_React$Component2) {
       var option = e.target.elements.option.value.trim();
       var error = this.props.handleAddOption(option);
 
+      // this.setState(() => {
+      //   // return {
+      //   //   error: error
+      //   // }
+      //   // in ES6 the above is equivalent to the below
+      //   return { error };
+      // });
       this.setState(function () {
-        // return {
-        //   error: error
-        // }
-        // in ES6 the above is equivalent to the below
         return { error: error };
       });
     }
