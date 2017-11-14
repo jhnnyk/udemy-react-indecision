@@ -75,14 +75,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 console.log("app.js is running!");
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* square */](4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["c" /* square */](4));
 console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* add */](100, 23));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* default */](100, 81));
 
-console.log(`is adult at 19: ${__WEBPACK_IMPORTED_MODULE_1__person_js__["b" /* isAdult */](19)}`);
-console.log(`is adult at 17: ${__WEBPACK_IMPORTED_MODULE_1__person_js__["b" /* isAdult */](17)}`);
+console.log(`is adult at 19: ${__WEBPACK_IMPORTED_MODULE_1__person_js__["c" /* isAdult */](19)}`);
+console.log(`is adult at 17: ${__WEBPACK_IMPORTED_MODULE_1__person_js__["c" /* isAdult */](17)}`);
 
 console.log(`can drink at 21: ${__WEBPACK_IMPORTED_MODULE_1__person_js__["a" /* canDrink */](21)}`);
 console.log(`can drink at 17: ${__WEBPACK_IMPORTED_MODULE_1__person_js__["a" /* canDrink */](17)}`);
+
+console.log(`is senior at 65: ${__WEBPACK_IMPORTED_MODULE_1__person_js__["b" /* default */](65)}`);
+console.log(`is senior at 64: ${__WEBPACK_IMPORTED_MODULE_1__person_js__["b" /* default */](64)}`);
 
 
 /***/ }),
@@ -90,13 +94,16 @@ console.log(`can drink at 17: ${__WEBPACK_IMPORTED_MODULE_1__person_js__["a" /* 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return square; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return square; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return subtract; });
 console.log("utils.js is running");
 
 const square = x => x * x;
 
 const add = (a, b) => a + b;
+
+const subtract = (a, b) => a - b;
 
 
 
@@ -109,11 +116,15 @@ const add = (a, b) => a + b;
 console.log("person.js is running");
 
 const isAdult = age => age >= 18;
-/* harmony export (immutable) */ __webpack_exports__["b"] = isAdult;
+/* harmony export (immutable) */ __webpack_exports__["c"] = isAdult;
 
 const canDrink = age => age >= 21;
 /* harmony export (immutable) */ __webpack_exports__["a"] = canDrink;
 
+
+const isSenior = age => age >= 65;
+
+/* harmony default export */ __webpack_exports__["b"] = (isSenior);
 
 
 /***/ })
