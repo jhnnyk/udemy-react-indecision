@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const template = React.createElement("p", {}, "testing 123");
+const template = <p>This IS JSX from WEbpack!</p>;
 ReactDOM.render(template, document.getElementById("app"));
 
 // import validator from "validator";
